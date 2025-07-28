@@ -1,0 +1,13 @@
+mcp-sdk>=0.1.0
+httpx>=0.23.0
+pydantic>=1.10.0
+uvicorn>=0.20.0
+python-dotenv>=0.21.0
+
+# Dev / Test
+pytest>=7.0
+pytest-asyncio>=0.20.0
+respx>=0.20.0
+
+mcp~=1.12.2
+pydantic-settings~=2.10.1
