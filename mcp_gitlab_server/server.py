@@ -16,4 +16,8 @@ import mcp_gitlab_server.prompts            # noqa: F401
 import mcp_gitlab_server.tools.gitlab_tools # noqa: F401
 
 # ↓ NEU: für Streamable HTTP einen ASGI‑App‑Wrapper erzeugen
-app = mcp.streamable_http_app()             # alternativ: mcp.http_app()
+# Fallback to `mcp.app` if `streamable_http_app` isn’t available (z.B. in Tests)
+try:
+    app = mcp.streamable_http_app()
+except AttributeError:
+    app = mcp.app  # Stubs like _DummyFastMCP setzen `app` in __init__
